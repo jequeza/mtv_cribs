@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/renter'
 require './lib/apartment'
+require 'pry'
 
 class ApartmentTest < MiniTest::Test
   def test_it_exists_and_has_attributes
@@ -17,7 +18,8 @@ class ApartmentTest < MiniTest::Test
   def test_it_can_add_renter
     renter1 = Renter.new("Jessie")
     unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
-    assert_equal nil, unit1.renter
+    
+    assert_nil unit1.renter
     unit1.add_renter(renter1)
     assert_equal renter1, unit1.renter
   end
