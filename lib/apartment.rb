@@ -1,3 +1,4 @@
+require './lib/renter'
 class Apartment
   attr_reader :number,
               :monthly_rent,
